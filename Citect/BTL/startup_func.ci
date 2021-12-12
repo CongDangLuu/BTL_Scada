@@ -1,0 +1,12 @@
+FUNCTION
+startup_func()
+	header();
+	Sleep(5);
+	INT b = 2;
+	WHILE 1 DO
+		abc_write(b);
+		b = b + 1;
+		Report_DB();
+		Sleep(8);
+	END
+END

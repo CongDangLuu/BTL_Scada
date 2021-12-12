@@ -1,0 +1,522 @@
+<?xml version="1.0"?>
+<equipmentTemplates>
+  <equipmentTemplate id="Motor">
+    <template desc="">
+      <param name="type">
+        <string name="name">Motor</string>
+        <string name="ref">Motor</string>
+        <string name="blank" />
+        <string name="wildcard" />
+        <string name="parameter-definitions" />
+      </param>
+      <input name="equipment" file="equip.dbf" desc="Equipment Database">
+        <field name="NAME" />
+        <field name="CLUSTER" />
+        <field name="TYPE" />
+        <field name="AREA" />
+        <field name="LOCATION" />
+        <field name="COMMENT" />
+        <field name="CUSTOM1" />
+        <field name="CUSTOM2" />
+        <field name="CUSTOM3" />
+        <field name="CUSTOM4" />
+        <field name="CUSTOM5" />
+        <field name="CUSTOM6" />
+        <field name="CUSTOM7" />
+        <field name="CUSTOM8" />
+        <field name="IODEVICE" />
+        <field name="PAGE" />
+        <field name="HELP" />
+        <field name="DEFSTATE" />
+        <field name="SCHEDULED" />
+        <field name="TAGPREFIX" />
+        <field name="PARAM" />
+        <field name="DEVSCHED" />
+        <field name="SCHEDID" />
+        <array name="param_list">{ToProperty('{param}','=',';')}</array>
+      </input>
+      <output name="Element" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Start</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">Internal</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Start</field>
+        <field name="TAGGENLINK" load="true">2190678d-a945-4fee-9c1f-5455</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938311</field>
+      </output>
+      <output name="Element_1" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Stop</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">Internal</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Stop</field>
+        <field name="TAGGENLINK" load="true">207053f4-6661-4589-8d16-3e69</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938311</field>
+      </output>
+      <output name="Element_2" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Startst</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM1}</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Startst</field>
+        <field name="TAGGENLINK" load="true">d69f0691-8f89-40df-a043-0505</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938319</field>
+      </output>
+      <output name="Element_3" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Stopst</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM2}</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Stopst</field>
+        <field name="TAGGENLINK" load="true">953d7045-c7b3-40d4-848d-fded</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938319</field>
+      </output>
+      <output name="Element_4" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Enable</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM3}</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Enable</field>
+        <field name="TAGGENLINK" load="true">478a49e1-f1c5-48b4-9bf2-783d</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938319</field>
+      </output>
+      <output name="Element_5" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Cmd</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM4}</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Cmd</field>
+        <field name="TAGGENLINK" load="true">22b61413-6c8a-486d-875f-fa20</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938319</field>
+      </output>
+      <output name="Element_6" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Power</field>
+        <field name="TYPE">REAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM5}</field>
+        <field name="ENG_ZERO">0.0</field>
+        <field name="ENG_FULL">100.0</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="RAW_ZERO">0</field>
+        <field name="RAW_FULL">100.0</field>
+        <field name="ENG_UNITS">%</field>
+        <field name="FORMAT">####.# EU</field>
+        <field name="ITEM">Power</field>
+        <field name="TAGGENLINK" load="true">61f8db2e-a7ca-4904-9d9f-6a66</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3939327</field>
+      </output>
+      <output name="Element_7" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Speed</field>
+        <field name="TYPE">REAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM6}</field>
+        <field name="ENG_ZERO">0.0</field>
+        <field name="ENG_FULL">1500.0</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="RAW_ZERO">0.0</field>
+        <field name="RAW_FULL">1500.0</field>
+        <field name="ENG_UNITS">RPM</field>
+        <field name="FORMAT">####.# EU</field>
+        <field name="ITEM">Speed</field>
+        <field name="TAGGENLINK" load="true">89babb64-2a68-4fea-8ca7-10f9</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3939327</field>
+      </output>
+      <output name="Element_9" file="trend.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_TrendSpeed</field>
+        <field name="EXPR">{equipment.TAGPREFIX}_Speed</field>
+        <field name="SAMPLEPER">00:00:01</field>
+        <field name="TYPE">TRN_PERIODIC</field>
+        <field name="STORMETHOD">Scaled (2-byte samples)</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Speed</field>
+        <field name="TAGGENLINK" load="true">390e1949-f787-4c59-905b-f404</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">467673099</field>
+      </output>
+      <output name="Element_10" file="anaalm.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="TAG" key="true">{equipment.TAGPREFIX}_AlarmSpeed</field>
+        <field name="NAME">{equipment.TAGPREFIX}_AlarmSpeed</field>
+        <field name="VAR">{equipment.TAGPREFIX}_Speed</field>
+        <field name="SETPOINT">{equipment.TAGPREFIX}_SpeedSP</field>
+        <field name="HIGHHIGH">1400</field>
+        <field name="HIGH">1300</field>
+        <field name="LOW">700</field>
+        <field name="LOWLOW">500</field>
+        <field name="DEVIATION">100</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Speed</field>
+        <field name="TAGGENLINK" load="true">1e875f82-a984-4087-afe1-0f26</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">521838526975</field>
+      </output>
+      <output name="Element_7_1" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_SpeedSP</field>
+        <field name="TYPE">REAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM8}</field>
+        <field name="ENG_ZERO">0.0</field>
+        <field name="ENG_FULL">1500.0</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="RAW_ZERO">0.0</field>
+        <field name="RAW_FULL">1500.0</field>
+        <field name="ENG_UNITS">RPM</field>
+        <field name="FORMAT">####.# EU</field>
+        <field name="ITEM">SpeedSP</field>
+        <field name="TAGGENLINK" load="true">19d9aeda-73f5-4823-9dec-9532</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3939327</field>
+      </output>
+      <output name="Element_8" file="trend.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_TrendSpeedSP</field>
+        <field name="EXPR">{equipment.TAGPREFIX}_SpeedSP</field>
+        <field name="SAMPLEPER">00:00:01</field>
+        <field name="TYPE">TRN_PERIODIC</field>
+        <field name="STORMETHOD">Scaled (2-byte samples)</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">SpeedSP</field>
+        <field name="TAGGENLINK" load="true">49d6fcc0-952f-4e31-a7e7-4c28</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">467673099</field>
+      </output>
+    </template>
+  </equipmentTemplate>
+  <equipmentTemplate id="PID">
+    <template desc="">
+      <param name="type">
+        <string name="name">PID</string>
+        <string name="ref">PID</string>
+        <string name="blank" />
+        <string name="wildcard" />
+        <string name="parameter-definitions" />
+      </param>
+      <input name="equipment" file="equip.dbf" desc="Equipment Database">
+        <field name="NAME" />
+        <field name="CLUSTER" />
+        <field name="TYPE" />
+        <field name="AREA" />
+        <field name="LOCATION" />
+        <field name="COMMENT" />
+        <field name="CUSTOM1" />
+        <field name="CUSTOM2" />
+        <field name="CUSTOM3" />
+        <field name="CUSTOM4" />
+        <field name="CUSTOM5" />
+        <field name="CUSTOM6" />
+        <field name="CUSTOM7" />
+        <field name="CUSTOM8" />
+        <field name="IODEVICE" />
+        <field name="PAGE" />
+        <field name="HELP" />
+        <field name="DEFSTATE" />
+        <field name="SCHEDULED" />
+        <field name="TAGPREFIX" />
+        <field name="PARAM" />
+        <field name="DEVSCHED" />
+        <field name="SCHEDID" />
+        <array name="param_list">{ToProperty('{param}','=',';')}</array>
+      </input>
+      <output name="Element_1" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Mode</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM1}</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Mode</field>
+        <field name="TAGGENLINK" load="true">0fc4b0d4-6fdd-489c-82a4-0c07</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938319</field>
+      </output>
+      <output name="Element_4" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_enP</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM2}</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">enP</field>
+        <field name="TAGGENLINK" load="true">25d90bd5-05d2-42d8-a610-095b</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938319</field>
+      </output>
+      <output name="Element_5" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_enI</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM3}</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">enI</field>
+        <field name="TAGGENLINK" load="true">094c4f56-1a44-4965-a30d-7195</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938319</field>
+      </output>
+      <output name="Element_6" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_enD</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM4}</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">enD</field>
+        <field name="TAGGENLINK" load="true">6c1b64cd-2069-4f69-a039-e037</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938319</field>
+      </output>
+      <output name="Element" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Kp</field>
+        <field name="TYPE">REAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM5}</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Kp</field>
+        <field name="TAGGENLINK" load="true">e284e7d1-40ab-4681-83b7-2f88</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938319</field>
+      </output>
+      <output name="Element_2" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Ti</field>
+        <field name="TYPE">ULONG</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM6}</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Ti</field>
+        <field name="TAGGENLINK" load="true">a5f7e48b-3f48-43b9-ab8c-a4b5</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938319</field>
+      </output>
+      <output name="Element_3" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Td</field>
+        <field name="TYPE">ULONG</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM7}</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Td</field>
+        <field name="TAGGENLINK" load="true">3a93ca8c-9c8a-4c1b-9837-19f8</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938319</field>
+      </output>
+      <output name="Element_7" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_PowerMax</field>
+        <field name="TYPE">REAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM8}</field>
+        <field name="ENG_ZERO">0.0</field>
+        <field name="ENG_FULL">100.0</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="RAW_ZERO">0.0</field>
+        <field name="RAW_FULL">100.0</field>
+        <field name="ITEM">PowerMax</field>
+        <field name="TAGGENLINK" load="true">2d249067-9e93-47ed-a8b0-f2e8</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938559</field>
+      </output>
+    </template>
+  </equipmentTemplate>
+  <equipmentTemplate id="Tank">
+    <template desc="">
+      <param name="type">
+        <string name="name">Tank</string>
+        <string name="ref">Tank</string>
+        <string name="blank" />
+        <string name="wildcard" />
+        <string name="parameter-definitions" />
+      </param>
+      <input name="equipment" file="equip.dbf" desc="Equipment Database">
+        <field name="NAME" />
+        <field name="CLUSTER" />
+        <field name="TYPE" />
+        <field name="AREA" />
+        <field name="LOCATION" />
+        <field name="COMMENT" />
+        <field name="CUSTOM1" />
+        <field name="CUSTOM2" />
+        <field name="CUSTOM3" />
+        <field name="CUSTOM4" />
+        <field name="CUSTOM5" />
+        <field name="CUSTOM6" />
+        <field name="CUSTOM7" />
+        <field name="CUSTOM8" />
+        <field name="IODEVICE" />
+        <field name="PAGE" />
+        <field name="HELP" />
+        <field name="DEFSTATE" />
+        <field name="SCHEDULED" />
+        <field name="TAGPREFIX" />
+        <field name="PARAM" />
+        <field name="DEVSCHED" />
+        <field name="SCHEDID" />
+        <array name="param_list">{ToProperty('{param}','=',';')}</array>
+      </input>
+      <output name="Element" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Open</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">Internal</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Open</field>
+        <field name="TAGGENLINK" load="true">4dab03d5-5108-4277-ba46-25e7</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938311</field>
+      </output>
+      <output name="Element_1" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Close</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">Internal</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Close</field>
+        <field name="TAGGENLINK" load="true">234e04fa-fbb9-4884-af82-a833</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938311</field>
+      </output>
+      <output name="Element_2" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Openst</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM1}</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Openst</field>
+        <field name="TAGGENLINK" load="true">458df173-6af4-459f-86f6-3980</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938319</field>
+      </output>
+      <output name="Element_2_1" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Closest</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM2}</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Closest</field>
+        <field name="TAGGENLINK" load="true">2a1ecc6b-5075-4397-b66e-d469</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938319</field>
+      </output>
+      <output name="Element_3" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Enable</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM3}</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Enable</field>
+        <field name="TAGGENLINK" load="true">2dc1f2d4-c878-430d-bfb3-77b8</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938319</field>
+      </output>
+      <output name="Element_4" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Cmd</field>
+        <field name="TYPE">DIGITAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM4}</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="ITEM">Cmd</field>
+        <field name="TAGGENLINK" load="true">665547a9-fe5a-4d7d-ab95-8bfc</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938319</field>
+      </output>
+      <output name="Element_5" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Power</field>
+        <field name="TYPE">REAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM5}</field>
+        <field name="ENG_ZERO">0.0</field>
+        <field name="ENG_FULL">100.0</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="RAW_ZERO">0.0</field>
+        <field name="RAW_FULL">100.0</field>
+        <field name="ENG_UNITS">%</field>
+        <field name="FORMAT">###.# EU</field>
+        <field name="ITEM">Power</field>
+        <field name="TAGGENLINK" load="true">78a05a73-8de7-42c6-8600-799f</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3939327</field>
+      </output>
+      <output name="Element_6" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Level</field>
+        <field name="TYPE">REAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM6}</field>
+        <field name="ENG_ZERO">0.0</field>
+        <field name="ENG_FULL">5.0</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="RAW_ZERO">0.0</field>
+        <field name="RAW_FULL">5.0</field>
+        <field name="ENG_UNITS">metres</field>
+        <field name="FORMAT">#.### EU</field>
+        <field name="ITEM">Level</field>
+        <field name="TAGGENLINK" load="true">366926e5-3ea7-45ba-a269-8756</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3939327</field>
+      </output>
+      <output name="Element_7" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_Flow</field>
+        <field name="TYPE">REAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM7}</field>
+        <field name="ENG_ZERO">0.0</field>
+        <field name="ENG_FULL">1000.0</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="RAW_ZERO">0.0</field>
+        <field name="RAW_FULL">1000.0</field>
+        <field name="ENG_UNITS">lt/min</field>
+        <field name="FORMAT">###.# EU</field>
+        <field name="ITEM">Flow</field>
+        <field name="TAGGENLINK" load="true">973e6092-8ba9-400c-acf1-f1ba</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3939327</field>
+      </output>
+      <output name="Element_8" file="variable.dbf" filter="'{equipment.type}={type.name}'">
+        <field name="NAME" key="true">{equipment.TAGPREFIX}_LevelSP</field>
+        <field name="TYPE">REAL</field>
+        <field name="UNIT">{equipment.IODEVICE}</field>
+        <field name="ADDR">{equipment.CUSTOM8}</field>
+        <field name="ENG_ZERO">0.0</field>
+        <field name="ENG_FULL">5.0</field>
+        <field name="CLUSTER" key="true">{equipment.CLUSTER}</field>
+        <field name="EQUIP">{equipment.name}</field>
+        <field name="RAW_ZERO">0</field>
+        <field name="RAW_FULL">5.0</field>
+        <field name="ENG_UNITS">metres</field>
+        <field name="ITEM">LevelSP</field>
+        <field name="TAGGENLINK" load="true">ae8e6d83-0147-4068-908e-7520</field>
+        <field name="LINKED">1</field>
+        <field name="EDITCODE">3938815</field>
+      </output>
+    </template>
+  </equipmentTemplate>
+</equipmentTemplates>

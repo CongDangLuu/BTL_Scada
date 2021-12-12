@@ -1,0 +1,264 @@
+FUNCTION
+header()
+	INT i=1;
+	WHILE i<4 DO
+		!header Motor
+		DDEWrite("Excel","Motor"+IntToStr(i),"R1C1","Status ");
+		DDEWrite("Excel","Motor"+IntToStr(i),"R1C2","Status Timestamp");
+				
+		DDEWrite("Excel","Motor"+IntToStr(i),"R1C3","BTStart");
+		DDEWrite("Excel","Motor"+IntToStr(i),"R1C4","BTStart Timestamp");
+		
+		DDEWrite("Excel","Motor"+IntToStr(i),"R1C5","BTStop");
+		DDEWrite("Excel","Motor"+IntToStr(i),"R1C6","BTStop Timestamp");
+				
+		DDEWrite("Excel","Motor"+IntToStr(i),"R1C7","Power");
+		DDEWrite("Excel","Motor"+IntToStr(i),"R1C8","Power Timestamp");
+		
+		DDEWrite("Excel","Motor"+IntToStr(i),"R1C9","Speed");
+		DDEWrite("Excel","Motor"+IntToStr(i),"R1C10","Speed Timestamp");
+		
+		!header Tank
+		DDEWrite("Excel","Tank"+IntToStr(i),"R1C1","Status ");
+		DDEWrite("Excel","Tank"+IntToStr(i),"R1C2","Status Timestamp");
+		
+		DDEWrite("Excel","Tank"+IntToStr(i),"R1C3","BTOpen");
+		DDEWrite("Excel","Tank"+IntToStr(i),"R1C4","BTOpen Timestamp");
+		
+		DDEWrite("Excel","Tank"+IntToStr(i),"R1C5","BTClose");
+		DDEWrite("Excel","Tank"+IntToStr(i),"R1C6","BTClose Timestamp");
+				
+		DDEWrite("Excel","Tank"+IntToStr(i),"R1C7","Power");
+		DDEWrite("Excel","Tank"+IntToStr(i),"R1C8","Power Timestamp");
+		
+		DDEWrite("Excel","Tank"+IntToStr(i),"R1C9","Level");
+		DDEWrite("Excel","Tank"+IntToStr(i),"R1C10","Level Timestamp");
+		
+		DDEWrite("Excel","Tank"+IntToStr(i),"R1C11","Flow");
+		DDEWrite("Excel","Tank"+IntToStr(i),"R1C12","Flow Timestamp");
+		i =i+1;
+
+	END
+END
+
+FUNCTION
+abc_write(INT x)
+!Motor_1
+	!Status
+	IF Motor_1_Cmd THEN
+		DDEWrite("Excel","Motor1","R"+ IntToStr(x)+ "C1", "ON");
+	ELSE
+		DDEWrite("Excel","Motor1","R"+ IntToStr(x)+ "C1", "OFF");
+	END
+	DDEWrite("Excel","Motor1","R"+ IntToStr(x)+ "C2", TimestampToStr(Motor_1_Cmd.field.vt,5));
+	
+	!BTStart
+	IF Motor_1_Startst THEN
+		DDEWrite("Excel","Motor1","R"+ IntToStr(x)+ "C3", "ON");
+	ELSE
+		DDEWrite("Excel","Motor1","R"+ IntToStr(x)+ "C3", "OFF");
+	END
+	DDEWrite("Excel","Motor1","R"+ IntToStr(x)+ "C4", TimestampToStr(Motor_1_Startst.field.vt,5));
+	
+	!BTStop
+	IF Motor_1_Stopst THEN
+		DDEWrite("Excel","Motor1","R"+ IntToStr(x)+ "C5", "ON");
+	ELSE
+		DDEWrite("Excel","Motor1","R"+ IntToStr(x)+ "C5", "OFF");
+	END
+	DDEWrite("Excel","Motor1","R"+ IntToStr(x)+ "C6", TimestampToStr(Motor_1_Stopst.field.vt,5));
+	
+	!Power
+	DDEWrite("Excel","Motor1","R"+ IntToStr(x)+ "C7", RealToStr(Motor_1_Power,6,2));
+	DDEWrite("Excel","Motor1","R"+ IntToStr(x)+ "C8", TimestampToStr(Motor_1_Power.field.vt,5));
+	
+	!Speed
+	DDEWrite("Excel","Motor1","R"+ IntToStr(x)+ "C9", RealToStr(Motor_1_Speed,6,2));	
+	DDEWrite("Excel","Motor1","R"+ IntToStr(x)+ "C10", TimestampToStr(Motor_1_Speed.field.vt,5));
+	
+!Motor_2
+	!Status
+	IF Motor_2_Cmd THEN
+		DDEWrite("Excel","Motor2","R"+ IntToStr(x)+ "C1", "ON");
+	ELSE
+		DDEWrite("Excel","Motor2","R"+ IntToStr(x)+ "C1", "OFF");
+	END
+	DDEWrite("Excel","Motor2","R"+ IntToStr(x)+ "C2", TimestampToStr(Motor_2_Cmd.field.vt,5));
+	
+	!BTStart
+	IF Motor_2_Startst THEN
+		DDEWrite("Excel","Motor2","R"+ IntToStr(x)+ "C3", "ON");
+	ELSE
+		DDEWrite("Excel","Motor2","R"+ IntToStr(x)+ "C3", "OFF");
+	END
+	DDEWrite("Excel","Motor2","R"+ IntToStr(x)+ "C4", TimestampToStr(Motor_2_Startst.field.vt,5));
+	
+	!BTStop
+	IF Motor_2_Stopst THEN
+		DDEWrite("Excel","Motor2","R"+ IntToStr(x)+ "C5", "ON");
+	ELSE
+		DDEWrite("Excel","Motor2","R"+ IntToStr(x)+ "C5", "OFF");
+	END
+	DDEWrite("Excel","Motor2","R"+ IntToStr(x)+ "C6", TimestampToStr(Motor_2_Stopst.field.vt,5));
+	
+	!Power
+	DDEWrite("Excel","Motor2","R"+ IntToStr(x)+ "C7", RealToStr(Motor_2_Power,6,2));
+	DDEWrite("Excel","Motor2","R"+ IntToStr(x)+ "C8", TimestampToStr(Motor_2_Power.field.vt,5));
+	
+	!Speed
+	DDEWrite("Excel","Motor2","R"+ IntToStr(x)+ "C9", RealToStr(Motor_2_Speed,6,2));	
+	DDEWrite("Excel","Motor2","R"+ IntToStr(x)+ "C10", TimestampToStr(Motor_2_Speed.field.vt,5));
+
+!Motor_3
+	!Status
+	IF Motor_3_Cmd THEN
+		DDEWrite("Excel","Motor3","R"+ IntToStr(x)+ "C1", "ON");
+	ELSE
+		DDEWrite("Excel","Motor3","R"+ IntToStr(x)+ "C1", "OFF");
+	END
+	DDEWrite("Excel","Motor3","R"+ IntToStr(x)+ "C2", TimestampToStr(Motor_3_Cmd.field.vt,5));
+	
+	!BTStart
+	IF Motor_3_Startst THEN
+		DDEWrite("Excel","Motor3","R"+ IntToStr(x)+ "C3", "ON");
+	ELSE
+		DDEWrite("Excel","Motor3","R"+ IntToStr(x)+ "C3", "OFF");
+	END
+	DDEWrite("Excel","Motor3","R"+ IntToStr(x)+ "C4", TimestampToStr(Motor_3_Startst.field.vt,5));
+	
+	!BTStop
+	IF Motor_3_Stopst THEN
+		DDEWrite("Excel","Motor3","R"+ IntToStr(x)+ "C5", "ON");
+	ELSE
+		DDEWrite("Excel","Motor3","R"+ IntToStr(x)+ "C5", "OFF");
+	END
+	DDEWrite("Excel","Motor3","R"+ IntToStr(x)+ "C6", TimestampToStr(Motor_3_Stopst.field.vt,5));
+	
+	!Power
+	DDEWrite("Excel","Motor3","R"+ IntToStr(x)+ "C7", RealToStr(Motor_3_Power,6,2));
+	DDEWrite("Excel","Motor3","R"+ IntToStr(x)+ "C8", TimestampToStr(Motor_3_Power.field.vt,5));
+	
+	!Speed
+	DDEWrite("Excel","Motor3","R"+ IntToStr(x)+ "C9", RealToStr(Motor_3_Speed,6,2));	
+	DDEWrite("Excel","Motor3","R"+ IntToStr(x)+ "C10", TimestampToStr(Motor_3_Speed.field.vt,5));
+	
+!Tank_1
+	!Status
+	IF Tank_1_Cmd THEN
+		DDEWrite("Excel","Tank1","R"+ IntToStr(x)+ "C1", "ON");
+	ELSE
+		DDEWrite("Excel","Tank1","R"+ IntToStr(x)+ "C1", "OFF");
+	END
+	DDEWrite("Excel","Tank1","R"+ IntToStr(x)+ "C2", TimestampToStr(Tank_1_Cmd.field.vt,5));
+	
+	!BTStart
+	IF Tank_1_Openst THEN
+		DDEWrite("Excel","Tank1","R"+ IntToStr(x)+ "C3", "ON");
+	ELSE
+		DDEWrite("Excel","Tank1","R"+ IntToStr(x)+ "C3", "OFF");
+	END
+	DDEWrite("Excel","Tank1","R"+ IntToStr(x)+ "C4", TimestampToStr(Tank_1_Openst.field.vt,5));
+	
+	!BTStop
+	IF Tank_1_Closest THEN
+		DDEWrite("Excel","Tank1","R"+ IntToStr(x)+ "C5", "ON");
+	ELSE
+		DDEWrite("Excel","Tank1","R"+ IntToStr(x)+ "C5", "OFF");
+	END
+	DDEWrite("Excel","Tank1","R"+ IntToStr(x)+ "C6", TimestampToStr(Tank_1_Closest.field.vt,5));
+	
+	!Power
+	DDEWrite("Excel","Tank1","R"+ IntToStr(x)+ "C7", RealToStr(Tank_1_Power,6,2));
+	DDEWrite("Excel","Tank1","R"+ IntToStr(x)+ "C8", TimestampToStr(Tank_1_Power.field.vt,5));
+	
+	!Level
+	DDEWrite("Excel","Tank1","R"+ IntToStr(x)+ "C9", RealToStr(Tank_1_Level,6,2));	
+	DDEWrite("Excel","Tank1","R"+ IntToStr(x)+ "C10", TimestampToStr(Tank_1_Level.field.vt,5));
+	
+	!Flow
+	DDEWrite("Excel","Tank1","R"+ IntToStr(x)+ "C9", RealToStr(Tank_1_Flow,6,2));	
+	DDEWrite("Excel","Tank1","R"+ IntToStr(x)+ "C10", TimestampToStr(Tank_1_Flow.field.vt,5));
+	
+!Tank_2
+	!Status
+	IF Tank_2_Cmd THEN
+		DDEWrite("Excel","Tank2","R"+ IntToStr(x)+ "C1", "ON");
+	ELSE
+		DDEWrite("Excel","Tank2","R"+ IntToStr(x)+ "C1", "OFF");
+	END
+	DDEWrite("Excel","Tank2","R"+ IntToStr(x)+ "C2", TimestampToStr(Tank_2_Cmd.field.vt,5));
+	
+	!BTStart
+	IF Tank_2_Openst THEN
+		DDEWrite("Excel","Tank2","R"+ IntToStr(x)+ "C3", "ON");
+	ELSE
+		DDEWrite("Excel","Tank2","R"+ IntToStr(x)+ "C3", "OFF");
+	END
+	DDEWrite("Excel","Tank2","R"+ IntToStr(x)+ "C4", TimestampToStr(Tank_2_Openst.field.vt,5));
+	
+	!BTStop
+	IF Tank_2_Closest THEN
+		DDEWrite("Excel","Tank2","R"+ IntToStr(x)+ "C5", "ON");
+	ELSE
+		DDEWrite("Excel","Tank2","R"+ IntToStr(x)+ "C5", "OFF");
+	END
+	DDEWrite("Excel","Tank2","R"+ IntToStr(x)+ "C6", TimestampToStr(Tank_2_Closest.field.vt,5));
+	
+	!Power
+	DDEWrite("Excel","Tank2","R"+ IntToStr(x)+ "C7", RealToStr(Tank_2_Power,6,2));
+	DDEWrite("Excel","Tank2","R"+ IntToStr(x)+ "C8", TimestampToStr(Tank_2_Power.field.vt,5));
+	
+	!Level
+	DDEWrite("Excel","Tank2","R"+ IntToStr(x)+ "C9", RealToStr(Tank_2_Level,6,2));	
+	DDEWrite("Excel","Tank2","R"+ IntToStr(x)+ "C10", TimestampToStr(Tank_2_Level.field.vt,5));
+	
+	!Flow
+	DDEWrite("Excel","Tank2","R"+ IntToStr(x)+ "C9", RealToStr(Tank_2_Flow,6,2));	
+	DDEWrite("Excel","Tank2","R"+ IntToStr(x)+ "C10", TimestampToStr(Tank_2_Flow.field.vt,5));
+	
+!Tank_3
+	!Status
+	IF Tank_3_Cmd THEN
+		DDEWrite("Excel","Tank3","R"+ IntToStr(x)+ "C1", "ON");
+	ELSE
+		DDEWrite("Excel","Tank3","R"+ IntToStr(x)+ "C1", "OFF");
+	END
+	DDEWrite("Excel","Tank3","R"+ IntToStr(x)+ "C2", TimestampToStr(Tank_3_Cmd.field.vt,5));
+	
+	!BTStart
+	IF Tank_3_Openst THEN
+		DDEWrite("Excel","Tank3","R"+ IntToStr(x)+ "C3", "ON");
+	ELSE
+		DDEWrite("Excel","Tank3","R"+ IntToStr(x)+ "C3", "OFF");
+	END
+	DDEWrite("Excel","Tank3","R"+ IntToStr(x)+ "C4", TimestampToStr(Tank_3_Openst.field.vt,5));
+	
+	!BTStop
+	IF Tank_3_Closest THEN
+		DDEWrite("Excel","Tank3","R"+ IntToStr(x)+ "C5", "ON");
+	ELSE
+		DDEWrite("Excel","Tank3","R"+ IntToStr(x)+ "C5", "OFF");
+	END
+	DDEWrite("Excel","Tank3","R"+ IntToStr(x)+ "C6", TimestampToStr(Tank_3_Closest.field.vt,5));
+	
+	!Power
+	DDEWrite("Excel","Tank3","R"+ IntToStr(x)+ "C7", RealToStr(Tank_3_Power,6,2));
+	DDEWrite("Excel","Tank3","R"+ IntToStr(x)+ "C8", TimestampToStr(Tank_3_Power.field.vt,5));
+	
+	!Level
+	DDEWrite("Excel","Tank3","R"+ IntToStr(x)+ "C9", RealToStr(Tank_3_Level,6,2));	
+	DDEWrite("Excel","Tank3","R"+ IntToStr(x)+ "C10", TimestampToStr(Tank_3_Level.field.vt,5));
+	
+	!Flow
+	DDEWrite("Excel","Tank3","R"+ IntToStr(x)+ "C9", RealToStr(Tank_3_Flow,6,2));	
+	DDEWrite("Excel","Tank3","R"+ IntToStr(x)+ "C10", TimestampToStr(Tank_3_Flow.field.vt,5));
+
+END
+
+
+
+
+
+
+
+

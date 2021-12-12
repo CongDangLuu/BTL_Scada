@@ -1,0 +1,105 @@
+Motor_1_Start	Internal		Cluster1	Motor_1.Start	Start
+Motor_1_Stop	Internal		Cluster1	Motor_1.Stop	Stop
+Motor_1_Startst	ModbusTCP	10001	Cluster1	Motor_1.Startst	Startst
+Motor_1_Stopst	ModbusTCP	10002	Cluster1	Motor_1.Stopst	Stopst
+Motor_1_Enable	ModbusTCP	00001	Cluster1	Motor_1.Enable	Enable
+Motor_1_Cmd	ModbusTCP	00002	Cluster1	Motor_1.Cmd	Cmd
+Motor_1_Power	ModbusTCP	40011	Cluster1	Motor_1.Power	Power
+Motor_1_Speed	ModbusTCP	40021	Cluster1	Motor_1.Speed	Speed
+Motor_1_SpeedSP	ModbusTCP	40031	Cluster1	Motor_1.SpeedSP	SpeedSP
+Motor_2_Start	Internal		Cluster1	Motor_2.Start	Start
+Motor_2_Stop	Internal		Cluster1	Motor_2.Stop	Stop
+Motor_2_Startst	PLC	PLC.Motor_2.Startst	Cluster1	Motor_2.Startst	Startst
+Motor_2_Stopst	PLC	PLC.Motor_2.Stopst	Cluster1	Motor_2.Stopst	Stopst
+Motor_2_Enable	PLC	PLC.Motor_2.Enable	Cluster1	Motor_2.Enable	Enable
+Motor_2_Cmd	PLC	PLC.Motor_2.Cmd	Cluster1	Motor_2.Cmd	Cmd
+Motor_2_Power	PLC	PLC.Motor_2.Power	Cluster1	Motor_2.Power	Power
+Motor_2_Speed	PLC	PLC.Motor_2.Speed	Cluster1	Motor_2.Speed	Speed
+Motor_2_SpeedSP	PLC	PLC.Motor_2.SpeedSP	Cluster1	Motor_2.SpeedSP	SpeedSP
+Motor_3_Start	Internal		Cluster1	Motor_3.Start	Start
+Motor_3_Stop	Internal		Cluster1	Motor_3.Stop	Stop
+Motor_3_Startst	PLC	PLC.Motor_3.Startst	Cluster1	Motor_3.Startst	Startst
+Motor_3_Stopst	PLC	PLC.Motor_3.Stopst	Cluster1	Motor_3.Stopst	Stopst
+Motor_3_Enable	PLC	PLC.Motor_3.Enable	Cluster1	Motor_3.Enable	Enable
+Motor_3_Cmd	PLC	PLC.Motor_3.Cmd	Cluster1	Motor_3.Cmd	Cmd
+Motor_3_Power	PLC	PLC.Motor_3.Power	Cluster1	Motor_3.Power	Power
+Motor_3_Speed	PLC	PLC.Motor_3.Speed	Cluster1	Motor_3.Speed	Speed
+Motor_3_SpeedSP	PLC	PLC.Motor_3.SpeedSP	Cluster1	Motor_3.SpeedSP	SpeedSP
+Tank_2_Open	Internal		Cluster1	Tank_2.Open	Open
+Tank_2_Close	Internal		Cluster1	Tank_2.Close	Close
+Tank_2_Openst	PLC	PLC.Tank_2.Openst	Cluster1	Tank_2.Openst	Openst
+Tank_2_Closest	PLC	PLC.Tank_2.Closest	Cluster1	Tank_2.Closest	Closest
+Tank_2_Enable	PLC	PLC.Tank_2.Enable	Cluster1	Tank_2.Enable	Enable
+Tank_2_Cmd	PLC	PLC.Tank_2.Cmd	Cluster1	Tank_2.Cmd	Cmd
+Tank_2_Power	PLC	PLC.Tank_2.Power	Cluster1	Tank_2.Power	Power
+Tank_2_Level	PLC	PLC.Tank_2.Level	Cluster1	Tank_2.Level	Level
+Tank_2_Flow	PLC	PLC.Tank_2.Flow	Cluster1	Tank_2.Flow	Flow
+Tank_2_LevelSP	PLC	PLC.Tank_2.LevelSP	Cluster1	Tank_2.LevelSP	LevelSP
+Tank_3_Open	Internal		Cluster1	Tank_3.Open	Open
+Tank_3_Close	Internal		Cluster1	Tank_3.Close	Close
+Tank_3_Openst	PLC	PLC.Tank_3.Openst	Cluster1	Tank_3.Openst	Openst
+Tank_3_Closest	PLC	PLC.Tank_3.Closest	Cluster1	Tank_3.Closest	Closest
+Tank_3_Enable	PLC	PLC.Tank_3.Enable	Cluster1	Tank_3.Enable	Enable
+Tank_3_Cmd	PLC	PLC.Tank_3.Cmd	Cluster1	Tank_3.Cmd	Cmd
+Tank_3_Power	PLC	PLC.Tank_3.Power	Cluster1	Tank_3.Power	Power
+Tank_3_Level	PLC	PLC.Tank_3.Level	Cluster1	Tank_3.Level	Level
+Tank_3_Flow	PLC	PLC.Tank_3.Flow	Cluster1	Tank_3.Flow	Flow
+Tank_3_LevelSP	PLC	PLC.Tank_3.LevelSP	Cluster1	Tank_3.LevelSP	LevelSP
+Tank_1_Open	Internal		Cluster1	Tank_1.Open	Open
+Tank_1_Close	Internal		Cluster1	Tank_1.Close	Close
+Tank_1_Openst	PLC	Modbus_RTU.Tank_1.Openst	Cluster1	Tank_1.Openst	Openst
+Tank_1_Closest	PLC	Modbus_RTU.Tank_1.Closest	Cluster1	Tank_1.Closest	Closest
+Tank_1_Enable	PLC	Modbus_RTU.Tank_1.Enable	Cluster1	Tank_1.Enable	Enable
+Tank_1_Cmd	PLC	Modbus_RTU.Tank_1.Cmd	Cluster1	Tank_1.Cmd	Cmd
+Tank_1_Power	PLC	Modbus_RTU.Tank_1.Power	Cluster1	Tank_1.Power	Power
+Tank_1_Level	PLC	Modbus_RTU.Tank_1.Level	Cluster1	Tank_1.Level	Level
+Tank_1_Flow	PLC	Modbus_RTU.Tank_1.Flow	Cluster1	Tank_1.Flow	Flow
+Tank_1_LevelSP	PLC	Modbus_RTU.Tank_1.LevelSP	Cluster1	Tank_1.LevelSP	LevelSP
+PID_Motor_2_Mode	PLC	PLC.PID_Motor_2.Mode	Cluster1	PID_Motor_2.Mode	Mode
+PID_Tank_3_Mode	PLC	PLC.PID_Tank_3.Mode	Cluster1	PID_Tank_3.Mode	Mode
+PID_Tank_2_Mode	PLC	PLC.PID_Tank_2.Mode	Cluster1	PID_Tank_2.Mode	Mode
+PID_Motor_3_Mode	PLC	PLC.PID_Motor_3.Mode	Cluster1	PID_Motor_3.Mode	Mode
+PID_Motor_2_enP	PLC	PLC.PID_Motor_2.enP	Cluster1	PID_Motor_2.enP	enP
+PID_Tank_3_enP	PLC	PLC.PID_Tank_3.enP	Cluster1	PID_Tank_3.enP	enP
+PID_Tank_2_enP	PLC	PLC.PID_Tank_2.enP	Cluster1	PID_Tank_2.enP	enP
+PID_Motor_3_enP	PLC	PLC.PID_Motor_3.enP	Cluster1	PID_Motor_3.enP	enP
+PID_Motor_2_enI	PLC	PLC.PID_Motor_2.enI	Cluster1	PID_Motor_2.enI	enI
+PID_Tank_3_enI	PLC	PLC.PID_Tank_3.enI	Cluster1	PID_Tank_3.enI	enI
+PID_Tank_2_enI	PLC	PLC.PID_Tank_2.enI	Cluster1	PID_Tank_2.enI	enI
+PID_Motor_3_enI	PLC	PLC.PID_Motor_3.enI	Cluster1	PID_Motor_3.enI	enI
+PID_Motor_2_enD	PLC	PLC.PID_Motor_2.enD	Cluster1	PID_Motor_2.enD	enD
+PID_Tank_3_enD	PLC	PLC.PID_Tank_3.enD	Cluster1	PID_Tank_3.enD	enD
+PID_Tank_2_enD	PLC	PLC.PID_Tank_2.enD	Cluster1	PID_Tank_2.enD	enD
+PID_Motor_3_enD	PLC	PLC.PID_Motor_3.enD	Cluster1	PID_Motor_3.enD	enD
+PID_Motor_2_Kp	PLC	PLC.PID_Motor_2.Kp	Cluster1	PID_Motor_2.Kp	Kp
+PID_Tank_3_Kp	PLC	PLC.PID_Tank_3.Kp	Cluster1	PID_Tank_3.Kp	Kp
+PID_Tank_2_Kp	PLC	PLC.PID_Tank_2.Kp	Cluster1	PID_Tank_2.Kp	Kp
+PID_Motor_3_Kp	PLC	PLC.PID_Motor_3.Kp	Cluster1	PID_Motor_3.Kp	Kp
+PID_Motor_2_Ti	PLC	PLC.PID_Motor_2.Ti	Cluster1	PID_Motor_2.Ti	Ti
+PID_Tank_3_Ti	PLC	PLC.PID_Tank_3.Ti	Cluster1	PID_Tank_3.Ti	Ti
+PID_Tank_2_Ti	PLC	PLC.PID_Tank_2.Ti	Cluster1	PID_Tank_2.Ti	Ti
+PID_Motor_3_Ti	PLC	PLC.PID_Motor_3.Ti	Cluster1	PID_Motor_3.Ti	Ti
+PID_Motor_2_Td	PLC	PLC.PID_Motor_2.Td	Cluster1	PID_Motor_2.Td	Td
+PID_Tank_3_Td	PLC	PLC.PID_Tank_3.Td	Cluster1	PID_Tank_3.Td	Td
+PID_Tank_2_Td	PLC	PLC.PID_Tank_2.Td	Cluster1	PID_Tank_2.Td	Td
+PID_Motor_3_Td	PLC	PLC.PID_Motor_3.Td	Cluster1	PID_Motor_3.Td	Td
+PID_Motor_2_PowerMax	PLC	PLC.PID_Motor_2.PowerMax	Cluster1	PID_Motor_2.PowerMax	PowerMax
+PID_Tank_3_PowerMax	PLC	PLC.PID_Tank_3.PowerMax	Cluster1	PID_Tank_3.PowerMax	PowerMax
+PID_Tank_2_PowerMax	PLC	PLC.PID_Tank_2.PowerMax	Cluster1	PID_Tank_2.PowerMax	PowerMax
+PID_Motor_3_PowerMax	PLC	PLC.PID_Motor_3.PowerMax	Cluster1	PID_Motor_3.PowerMax	PowerMax
+PID_Motor_1_Mode	ModbusTCP	00017	Cluster1	PID_Motor_1.Mode	Mode
+PID_Motor_1_enP	ModbusTCP	00018	Cluster1	PID_Motor_1.enP	enP
+PID_Motor_1_enI	ModbusTCP	00019	Cluster1	PID_Motor_1.enI	enI
+PID_Motor_1_enD	ModbusTCP	00020	Cluster1	PID_Motor_1.enD	enD
+PID_Motor_1_Kp	ModbusTCP	40001	Cluster1	PID_Motor_1.Kp	Kp
+PID_Motor_1_Ti	ModbusTCP	40003	Cluster1	PID_Motor_1.Ti	Ti
+PID_Motor_1_Td	ModbusTCP	40005	Cluster1	PID_Motor_1.Td	Td
+PID_Motor_1_PowerMax	ModbusTCP	40007	Cluster1	PID_Motor_1.PowerMax	PowerMax
+PID_Tank_1_Mode	PLC	Modbus_RTU.PID_Tank_1.Mode	Cluster1	PID_Tank_1.Mode	Mode
+PID_Tank_1_enP	PLC	Modbus_RTU.PID_Tank_1.enP	Cluster1	PID_Tank_1.enP	enP
+PID_Tank_1_enI	PLC	Modbus_RTU.PID_Tank_1.enI	Cluster1	PID_Tank_1.enI	enI
+PID_Tank_1_enD	PLC	Modbus_RTU.PID_Tank_1.enD	Cluster1	PID_Tank_1.enD	enD
+PID_Tank_1_Kp	PLC	Modbus_RTU.PID_Tank_1.Kp	Cluster1	PID_Tank_1.Kp	Kp
+PID_Tank_1_Ti	PLC	Modbus_RTU.PID_Tank_1.Ti	Cluster1	PID_Tank_1.Ti	Ti
+PID_Tank_1_Td	PLC	Modbus_RTU.PID_Tank_1.Td	Cluster1	PID_Tank_1.Td	Td
+PID_Tank_1_PowerMax	PLC	Modbus_RTU.PID_Tank_1.PowerMax	Cluster1	PID_Tank_1.PowerMax	PowerMax

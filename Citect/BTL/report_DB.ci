@@ -1,0 +1,158 @@
+FUNCTION
+Report_DB()
+
+	INT hSQL = -1;
+	!Motor1
+	STRING st11= IntToStr(Motor_1_Cmd);	
+	STRING st12= TimestampToStr(Motor_1_Cmd.field.vt,5,0);
+		
+	STRING st13= RealToStr(Motor_1_Power,10,2);
+	STRING st14= TimestampToStr(Motor_1_Power.field.vt,5,0);
+	
+	STRING st15= RealToStr(Motor_1_Speed,10,2);
+	STRING st16= TimestampToStr(Motor_1_Speed.field.vt,5,0);
+	
+	!Motor2
+	STRING st21= IntToStr(Motor_2_Cmd);
+	STRING st22= TimestampToStr(Motor_2_Cmd.field.vt,5,0);
+	
+	STRING st23= RealToStr(Motor_2_Power,10,2);
+	STRING st24= TimestampToStr(Motor_2_Power.field.vt,5,0);
+	
+	STRING st25= RealToStr(Motor_2_Speed,10,2);
+	STRING st26= TimestampToStr(Motor_2_Speed.field.vt,5,0);
+	
+	
+	!Motor3
+	STRING st31= IntToStr(Motor_3_Cmd);
+	STRING st32= TimestampToStr(Motor_3_Cmd.field.vt,5,0);
+		
+	STRING st33= RealToStr(Motor_3_Power,10,2);
+	STRING st34= TimestampToStr(Motor_3_Power.field.vt,5,0);
+	
+	STRING st35= RealToStr(Motor_3_Speed,10,2);
+	STRING st36= TimestampToStr(Motor_3_Speed.field.vt,5,0);
+	
+	!Tank_1
+	STRING st41= IntToStr(Tank_1_Cmd);
+	STRING st42= TimestampToStr(Tank_1_Cmd.field.vt,5,0);
+		
+	STRING st43= RealToStr(Tank_1_Power,10,2);
+	STRING st44= TimestampToStr(Tank_1_Power.field.vt,5,0);
+	
+	STRING st45= RealToStr(Tank_1_Flow,10,2);
+	STRING st46= TimestampToStr(Tank_1_Flow.field.vt,5,0);
+	
+	STRING st47= RealToStr(Tank_1_Level,10,2);
+	STRING st48= TimestampToStr(Tank_1_Level.field.vt,5,0);
+	
+	!Tank_2
+	STRING st51= IntToStr(Tank_2_Cmd);
+	STRING st52= TimestampToStr(Tank_2_Cmd.field.vt,5,0);
+		
+	STRING st53= RealToStr(Tank_2_Power,10,2);
+	STRING st54= TimestampToStr(Tank_2_Power.field.vt,5,0);
+	
+	STRING st55= RealToStr(Tank_2_Flow,10,2);
+	STRING st56= TimestampToStr(Tank_2_Flow.field.vt,5,0);
+	
+	STRING st57= RealToStr(Tank_2_Level,10,2);
+	STRING st58= TimestampToStr(Tank_2_Level.field.vt,5,0);
+	
+	!Tank_3
+	STRING st61= IntToStr(Tank_3_Cmd);
+	STRING st62= TimestampToStr(Tank_3_Cmd.field.vt,5,0);
+		
+	STRING st63= RealToStr(Tank_3_Power,10,2);
+	STRING st64= TimestampToStr(Tank_3_Power.field.vt,5,0);
+	
+	STRING st65= RealToStr(Tank_3_Flow,10,2);
+	STRING st66= TimestampToStr(Tank_3_Flow.field.vt,5,0);
+	
+	STRING st67= RealToStr(Tank_3_Level,10,2);
+	STRING st68= TimestampToStr(Tank_3_Level.field.vt,5,0);
+	
+	INT Status = 0; 
+	hSQL = SQLConnect ("DSN=REPORT_DATABASE_BTL");
+	
+	!MOTOR1 
+	IF hSQL<0 THEN
+		Message ("CONNECT ERROR ",SQLErrMsg (),48);
+	ELSE 
+		SQLSet (hSQL,"INSERT INTO MOTOR1 (Status,Status_timest,Power,Power_timest,Speed,Speed_timest)VALUES(");
+		SQLAppend(hSQL,st11+",'"+st12+"',"+st13+",'"+st14+"',"+st15+",'"+st16+"')");
+				
+		Status = SQLExec(hSQL,"");
+		IF Status <>0 THEN
+			Message("Status error",SQLErrMsg(),48);
+		END
+	END
+		
+	!MOTOR2 
+	Status = 0;
+	IF hSQL<0 THEN
+		Message ("CONNECT ERROR ",SQLErrMsg (),48);
+	ELSE 
+		SQLSet (hSQL,"INSERT INTO MOTOR2 (Status,Status_timest,Power,Power_timest,Speed,Speed_timest)VALUES(");
+		SQLAppend(hSQL,st21+",'"+st22+"',"+st23+",'"+st24+"',"+st25+",'"+st26+"')");
+				
+		Status = SQLExec(hSQL,"");
+		IF Status <>0 THEN
+			Message("Status error",SQLErrMsg(),48);
+		END
+	END
+	
+	!MOTOR3
+	Status = 0;
+	IF hSQL<0 THEN
+		Message ("CONNECT ERROR ",SQLErrMsg (),48);
+	ELSE 
+		SQLSet (hSQL,"INSERT INTO MOTOR3 (Status,Status_timest,Power,Power_timest,Speed,Speed_timest)VALUES(");
+		SQLAppend(hSQL,st31+",'"+st32+"',"+st33+",'"+st34+"',"+st35+",'"+st36+"')");
+				
+		Status = SQLExec(hSQL,"");
+		IF Status <>0 THEN
+			Message("Status error",SQLErrMsg(),48);
+		END
+	END
+	
+	!TANK1
+	Status = 0;
+	IF hSQL<0 THEN
+		Message ("CONNECT ERROR ",SQLErrMsg (),48);
+	ELSE 
+		SQLSet (hSQL,"INSERT INTO TANK1 (Status,Status_timest,Power,Power_timest,Flow,Flow_timest,Level_m,Level_m_timest)VALUES(");
+		SQLAppend(hSQL,st41+",'"+st42+"',"+st43+",'"+st44+"',"+st45+",'"+st46+"',"+st47+",'"+st48+"')");				
+		Status = SQLExec(hSQL,"");
+		IF Status <>0 THEN
+			Message("Status error",SQLErrMsg(),48);
+		END
+	END
+	
+		!TANK2
+	Status = 0;
+	IF hSQL<0 THEN
+		Message ("CONNECT ERROR ",SQLErrMsg (),48);
+	ELSE 
+		SQLSet (hSQL,"INSERT INTO TANK2 (Status,Status_timest,Power,Power_timest,Flow,Flow_timest,Level_m,Level_m_timest)VALUES(");
+		SQLAppend(hSQL,st51+",'"+st52+"',"+st53+",'"+st54+"',"+st55+",'"+st56+"',"+st57+",'"+st58+"')");				
+		Status = SQLExec(hSQL,"");
+		IF Status <>0 THEN
+			Message("Status error",SQLErrMsg(),48);
+		END
+	END
+		!TANK3
+	Status = 0;
+	IF hSQL<0 THEN
+		Message ("CONNECT ERROR ",SQLErrMsg (),48);
+	ELSE 
+		SQLSet (hSQL,"INSERT INTO TANK3 (Status,Status_timest,Power,Power_timest,Flow,Flow_timest,Level_m,Level_m_timest)VALUES(");
+		SQLAppend(hSQL,st61+",'"+st62+"',"+st63+",'"+st64+"',"+st65+",'"+st66+"',"+st67+",'"+st68+"')");				
+		Status = SQLExec(hSQL,"");
+		IF Status <>0 THEN
+			Message("Status error",SQLErrMsg(),48);
+		END
+	END
+	
+	SQLDisconnect(hSQL);
+END

@@ -1,0 +1,81 @@
+FUNCTION PiD_Paramets_Init()
+	INT hChannel;
+	hChannel = DDEhInitiate("EXCEL", "SYSTEM");
+	DDEhExecute(hChannel, "[OPEN(^"D:\BK\211\Scada\Project\BTL\PID_PARAS.xlsx^")]");
+	DDEhTerminate(hChannel);
+	hChannel = DDEhInitiate("EXCEL", "PID");
+	IF hChannel > -1 THEN
+		PID_Motor_1_Mode = StrToInt(DDEhRequest(hChannel, "R2C2"));
+		PID_Motor_1_enP = StrToInt(DDEhRequest(hChannel, "R2C3"));
+		PID_Motor_1_enI = StrToInt(DDEhRequest(hChannel, "R2C4"));
+		PID_Motor_1_enD = StrToInt(DDEhRequest(hChannel, "R2C5"));
+		PID_Motor_1_Kp = StrToInt(DDEhRequest(hChannel, "R2C6"));
+		PID_Motor_1_Ti = StrToInt(DDEhRequest(hChannel, "R2C7"));
+		PID_Motor_1_Td = StrToInt(DDEhRequest(hChannel, "R2C8"));
+		PID_Motor_1_PowerMax = StrToInt(DDEhRequest(hChannel, "R2C9"));
+		Motor_1_SpeedSP = StrToInt(DDEhRequest(hChannel, "R2C10"));
+		Motor_1_Enable = StrToInt(DDEhRequest(hChannel, "R2C11"));
+		
+		PID_Motor_2_Mode = StrToInt(DDEhRequest(hChannel, "R3C2"));
+		PID_Motor_2_enP = StrToInt(DDEhRequest(hChannel, "R3C3"));
+		PID_Motor_2_enI = StrToInt(DDEhRequest(hChannel, "R3C4"));
+		PID_Motor_2_enD = StrToInt(DDEhRequest(hChannel, "R3C5"));
+		PID_Motor_2_Kp = StrToInt(DDEhRequest(hChannel, "R3C6"));
+		PID_Motor_2_Ti = StrToInt(DDEhRequest(hChannel, "R3C7"));
+		PID_Motor_2_Td = StrToInt(DDEhRequest(hChannel, "R3C8"));
+		PID_Motor_2_PowerMax = StrToInt(DDEhRequest(hChannel, "R3C9"));
+		Motor_2_SpeedSP = StrToInt(DDEhRequest(hChannel, "R3C10"));
+		Motor_2_Enable = StrToInt(DDEhRequest(hChannel, "R3C11"));
+
+		PID_Motor_3_Mode = StrToInt(DDEhRequest(hChannel, "R4C2"));
+		PID_Motor_3_enP = StrToInt(DDEhRequest(hChannel, "R4C3"));
+		PID_Motor_3_enI = StrToInt(DDEhRequest(hChannel, "R4C4"));
+		PID_Motor_3_enD = StrToInt(DDEhRequest(hChannel, "R4C5"));
+		PID_Motor_3_Kp = StrToInt(DDEhRequest(hChannel, "R4C6"));
+		PID_Motor_3_Ti = StrToInt(DDEhRequest(hChannel, "R4C7"));
+		PID_Motor_3_Td = StrToInt(DDEhRequest(hChannel, "R4C8"));
+		PID_Motor_3_PowerMax = StrToInt(DDEhRequest(hChannel, "R4C9"));
+		Motor_3_SpeedSP = StrToInt(DDEhRequest(hChannel, "R4C10"));
+		Motor_3_Enable = StrToInt(DDEhRequest(hChannel, "R4C11"));
+
+		PID_Tank_1_Mode = StrToInt(DDEhRequest(hChannel, "R5C2"));
+		PID_Tank_1_enP = StrToInt(DDEhRequest(hChannel, "R5C3"));
+		PID_Tank_1_enI = StrToInt(DDEhRequest(hChannel, "R5C4"));
+		PID_Tank_1_enD = StrToInt(DDEhRequest(hChannel, "R5C5"));
+		PID_Tank_1_Kp = StrToInt(DDEhRequest(hChannel, "R5C6"));
+		PID_Tank_1_Ti = StrToInt(DDEhRequest(hChannel, "R5C7"));
+		PID_Tank_1_Td = StrToInt(DDEhRequest(hChannel, "R5C8"));
+		PID_Tank_1_PowerMax = StrToInt(DDEhRequest(hChannel, "R5C9")); 
+		Tank_1_LevelSP = StrToInt(DDEhRequest(hChannel, "R5C10"));
+		Tank_1_Enable = StrToInt(DDEhRequest(hChannel, "R5C11"));
+		
+		PID_Tank_2_Mode = StrToInt(DDEhRequest(hChannel, "R6C2"));
+		PID_Tank_2_enP = StrToInt(DDEhRequest(hChannel, "R6C3"));
+		PID_Tank_2_enI = StrToInt(DDEhRequest(hChannel, "R6C4"));
+		PID_Tank_2_enD = StrToInt(DDEhRequest(hChannel, "R6C5"));
+		PID_Tank_2_Kp = StrToInt(DDEhRequest(hChannel, "R6C6"));
+		PID_Tank_2_Ti = StrToInt(DDEhRequest(hChannel, "R6C7"));
+		PID_Tank_2_Td = StrToInt(DDEhRequest(hChannel, "R6C8"));
+		PID_Tank_2_PowerMax = StrToInt(DDEhRequest(hChannel, "R6C9"));
+		Tank_2_LevelSP = StrToInt(DDEhRequest(hChannel, "R6C10"));
+		Tank_2_Enable = StrToInt(DDEhRequest(hChannel, "R6C11"));
+
+		PID_Tank_3_Mode = StrToInt(DDEhRequest(hChannel, "R7C2"));
+		PID_Tank_3_enP = StrToInt(DDEhRequest(hChannel, "R7C3"));
+		PID_Tank_3_enI = StrToInt(DDEhRequest(hChannel, "R7C4"));
+		PID_Tank_3_enD = StrToInt(DDEhRequest(hChannel, "R7C5"));
+		PID_Tank_3_Kp = StrToInt(DDEhRequest(hChannel, "R7C6"));
+		PID_Tank_3_Ti = StrToInt(DDEhRequest(hChannel, "R7C7"));
+		PID_Tank_3_Td = StrToInt(DDEhRequest(hChannel, "R7C8"));
+		PID_Tank_3_PowerMax = StrToInt(DDEhRequest(hChannel, "R7C9"));
+		Tank_3_LevelSP = StrToInt(DDEhRequest(hChannel, "R7C10"));
+		Tank_3_Enable = StrToInt(DDEhRequest(hChannel, "R7C11"));
+		
+		DDEhTerminate(hChannel);
+		hChannel = -1;
+	END
+END
+	
+
+		
+		
